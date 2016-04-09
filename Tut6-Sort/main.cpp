@@ -6,24 +6,54 @@
 
 using namespace std;
 
-template <class T>
-T sort(T arr1[], int length)
+template <typename T>
+void sort(T arr1[], int length)   //NB Made this void since attempting to return an array caused compile errors
 {
 	T temp;
-	for (int i = 0; i < length - 1; i++)
+	for (int i = 0; i < length - 1; i++)  //Consider the case error when approaching the last element
 	{
-		if (arr1[i + 1] > arr1[i])
+		for (int j = i + 1; j < length; j++)  //MUST use another loop counter for the second element
 		{
-			temp = arr1[i];
-			arr1[i] = arr1[i + 1];
-			arr1[i + 1] = temp;
+			if (arr1[i] < arr1[j])
+			{
+				T temp = arr1[i];
+				arr1[i] = arr1[j];
+				arr1[j] = temp;
+			}
 		}
 	}
-	return arr1;
 }
 
 int main()
 {
+	int intarray[6] = { 1, 5, 19, 2, 13, 15 };
+	float fltarray[6] = { 12.5, 10.6, 7.5, 6.35, 36.45, 14.8 };
+	string strarray[6] = { "cat", "house", "elephant", "do", "Praneel", "Galaxy Guardian" };
+
+	//Use the function to sort the arrays from highest to lowest
+	sort(intarray, 6);
+	sort(fltarray, 6);
+	sort(strarray, 6);
+
+	//Print out the array for confirmation
+	for (int i = 0; i < 6; i++)
+	{
+		cout << intarray[i] << "\t"; 
+	}
+
+	cout << endl;
+
+	for (int i = 0; i < 6; i++)
+	{
+		cout << fltarray[i] << "\t";
+	}
+
+	cout << endl;
+
+	for (int i = 0; i < 6; i++)
+	{
+		cout << strarray[i] << "\t";
+	}
 
 	system("PAUSE");
 	return 0;
