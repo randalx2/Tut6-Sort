@@ -19,7 +19,7 @@ void sort(T arr1[], int length)   //NB Made this void since attempting to return
 		{
 			if (arr1[i] < arr1[j])
 			{
-				T temp = arr1[i];
+				temp = arr1[i];
 				arr1[i] = arr1[j];
 				arr1[j] = temp;
 			}
@@ -29,7 +29,8 @@ void sort(T arr1[], int length)   //NB Made this void since attempting to return
 
 //Notes for exam
 //Ring counter--> When using only one loop counter we have code that mimics the ring counter problem from test 1
-//ie each time sort is called the array elements are moved regardless of any if statement conditions.
+//ie each time sort is called the array elements are moved regardless of any if statement conditions. The first element becomes
+//the last element after each successive call
 /*template <typename T>
 void sort(T arr1[], int length)   //NB Made this void since attempting to return an array caused compile errors
 {
@@ -38,7 +39,7 @@ void sort(T arr1[], int length)   //NB Made this void since attempting to return
 	{
         T temp = arr1[i];
 	    arr1[i] = arr1[i+1];
-		arr1[i+1] = temp;	
+		arr1[i+1] = temp;	//always holds the previous element
 	}
 }*/
 
