@@ -1,3 +1,6 @@
+//PRANEEL MISTHRY 202515355
+//COMPUTER METHODS 3 - TUT6-SORT
+
 #include <iostream>
 #include <cstdio>
 #include <cmath>
@@ -12,7 +15,7 @@ void sort(T arr1[], int length)   //NB Made this void since attempting to return
 	T temp;
 	for (int i = 0; i < length - 1; i++)  //Consider the case error when approaching the last element
 	{
-		for (int j = i + 1; j < length; j++)  //MUST use another loop counter for the second element
+		for (int j = i + 1; j < length; j++)  //MUST use another loop counter for the second element for sorting problems
 		{
 			if (arr1[i] < arr1[j])
 			{
@@ -23,6 +26,21 @@ void sort(T arr1[], int length)   //NB Made this void since attempting to return
 		}
 	}
 }
+
+//Notes for exam
+//Ring counter--> When using only one loop counter we have code that mimics the ring counter problem from test 1
+//ie each time sort is called the array elements are moved regardless of any if statement conditions.
+/*template <typename T>
+void sort(T arr1[], int length)   //NB Made this void since attempting to return an array caused compile errors
+{
+	T temp;
+	for (int i = 0; i < length - 1; i++)  //Consider the case error when approaching the last element
+	{
+        T temp = arr1[i];
+	    arr1[i] = arr1[i+1];
+		arr1[i+1] = temp;	
+	}
+}*/
 
 int main()
 {
@@ -54,6 +72,7 @@ int main()
 	{
 		cout << strarray[i] << "\t";
 	}
+	cout << endl;
 
 	system("PAUSE");
 	return 0;
